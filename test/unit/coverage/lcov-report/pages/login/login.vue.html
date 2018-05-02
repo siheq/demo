@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for pages\login\login.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">pages/login/</a> login.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/4</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;div id="app"&gt;
+    &lt;el-dialog :title="dialogTitle" :visible.sync="serDialogFormVisible" label-position="left"&gt;   
+    &lt;el-form ref="form" :model="form" label-width="80px"&gt;
+            &lt;el-form-item label="活动名称"&gt;
+                &lt;el-input v-model="form.name" &gt;&lt;/el-input&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="活动区域"&gt;
+                &lt;el-select v-model="form.region" placeholder="请选择活动区域"&gt;
+                &lt;el-option label="区域一" value="shanghai"&gt;&lt;/el-option&gt;
+                &lt;el-option label="区域二" value="beijing"&gt;&lt;/el-option&gt;
+                &lt;/el-select&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="活动时间"&gt;
+                &lt;el-col :span="8"&gt;
+                &lt;el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"&gt;&lt;/el-date-picker&gt;
+                &lt;/el-col&gt;
+                &lt;el-col class="line" :span="2"&gt;-&lt;/el-col&gt;
+                &lt;el-col :span="8"&gt;
+                &lt;el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 100%;"&gt;&lt;/el-time-picker&gt;
+                &lt;/el-col&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="即时配送"&gt;
+                &lt;el-switch v-model="form.delivery"&gt;&lt;/el-switch&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="活动性质"&gt;
+                &lt;el-checkbox-group v-model="form.type"&gt;
+                &lt;el-checkbox label="美食/餐厅线上活动" name="type"&gt;&lt;/el-checkbox&gt;
+                &lt;el-checkbox label="地推活动" name="type"&gt;&lt;/el-checkbox&gt;
+                &lt;el-checkbox label="线下主题活动" name="type"&gt;&lt;/el-checkbox&gt;
+                &lt;el-checkbox label="单纯品牌曝光" name="type"&gt;&lt;/el-checkbox&gt;
+                &lt;/el-checkbox-group&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="特殊资源"&gt;
+                &lt;el-radio-group v-model="form.resource"&gt;
+                &lt;el-radio label="线上品牌商赞助"&gt;&lt;/el-radio&gt;
+                &lt;el-radio label="线下场地免费"&gt;&lt;/el-radio&gt;
+                &lt;/el-radio-group&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="活动形式"&gt;
+                &lt;el-input type="textarea" v-model="form.desc"&gt;&lt;/el-input&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item&gt;
+                &lt;el-button type="primary" @click="onSubmit"&gt;立即创建&lt;/el-button&gt;
+                &lt;el-button&gt;取消&lt;/el-button&gt;
+            &lt;/el-form-item&gt;
+        &lt;/el-form&gt;
+    &lt;/el-dialog&gt;
+&nbsp;
+&nbsp;
+    &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;   
+&lt;/template&gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&lt;script&gt;
+export default {
+    name: 'app',
+  data () {
+    return {
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      },
+      dialogTitle: 'xxx',
+      serDialogFormVisible: true
+    }
+  },
+  methods: {
+    handleOpen (key, keyPath) {
+<span class="cstat-no" title="statement not covered" >      console.log(key, keyPath)</span>
+    },
+    handleClose (key, keyPath) {
+<span class="cstat-no" title="statement not covered" >      console.log(key, keyPath)</span>
+    },
+    onSubmit () {
+<span class="cstat-no" title="statement not covered" >      console.log('submit!')</span>
+    }
+  }
+}
+&lt;/script&gt;
+&nbsp;
+&nbsp;
+&lt;style scoped&gt;
+&nbsp;
+&lt;/style&gt;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Mar 05 2018 10:41:29 GMT+0800 (China Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
