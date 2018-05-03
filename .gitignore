@@ -28,3 +28,4 @@ deploy2Remote.bat
 
 node_modules*/
 .vscode
+dist*/
