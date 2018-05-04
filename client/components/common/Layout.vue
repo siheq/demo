@@ -1,16 +1,18 @@
 <template>
   <div>
-
+    <headerView></headerView>
+        <router-view/>
+    <footerView></footerView>
   </div>
 </template>
 
 <script>
-import footer from './Footer';
-import header from './Header';
+import footerView from './footerView';
+import headerView from './headerView';
 export default {
   components : {
-    'footer',
-    'header'
+    footerView,
+    headerView,
   },
   data () {
     return {

@@ -2,7 +2,7 @@
   <div class='header'>
       <div>
         <div class="menu-item">
-          Home
+          <i class="icon"></i>
         </div>
         <div class="menu-item">|</div>
         <div class="menu-item">Menu</div>
@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style>
-
+  .menu-item {
+    display: inline;
+  }
 </style>
 
