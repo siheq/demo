@@ -10,7 +10,7 @@
 import footerView from './footerView';
 import headerView from './headerView';
 export default {
-  components : {
+  components: {
     footerView,
     headerView,
   },
@@ -18,7 +18,7 @@ export default {
     return {
     };
   },
-}
+};
 </script>
 
 <style>

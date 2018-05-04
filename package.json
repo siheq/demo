@@ -35,7 +35,10 @@
     "validator": "^9.4.1",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
-    "vue-strap": "^1.1.37"
+    "vue-strap": "^1.1.37",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-ava": "^4.4.0",
+    "eslint-plugin-vue": "^3.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
