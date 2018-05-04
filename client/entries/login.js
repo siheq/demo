@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import App from '../pages/login/login.vue';
-import 'element-ui/lib/theme-default/index.css';
 import router from '../router/login.js';
 import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import vueStrap from 'vue-strap';
 
 Vue.use(ElementUI);
