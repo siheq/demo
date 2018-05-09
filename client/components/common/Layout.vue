@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <headerView></headerView>
-      <!-- <sidebar></sidebar> -->
-      <router-view/>
-    <footerView></footerView>
+  <div class="layout">
+    <el-row type="flex" style="height: 100%">
+      <el-col :span='24'>
+      <headerView></headerView>
+        <!-- <sidebar></sidebar> -->
+        <div class="layout-content">
+          <router-view/>
+        </div>
+      <footerView></footerView>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -25,7 +31,7 @@ export default {
 </script>
 
 <style>
-router-view {
+.layout-content {
   margin-bottom: 80px;
 }
 </style>
