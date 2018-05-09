@@ -1,12 +1,8 @@
 <template>
   <div>
     <headerView></headerView>
-     <el-col :span='3'>
-      <sidebar></sidebar>
-     </el-col>
-     <el-col :span='8'>
+      <!-- <sidebar></sidebar> -->
       <router-view/>
-     </el-col>
     <footerView></footerView>
   </div>
 </template>
@@ -29,6 +25,8 @@ export default {
 </script>
 
 <style>
-
+router-view {
+  margin-bottom: 80px;
+}
 </style>
 
