@@ -1,6 +1,19 @@
 <template>
   <div class="hello">
-    Main Content
+    <el-upload
+      class="upload-demo"
+      action="https://jsonplaceholder.typicode.com/posts/"
+      :on-preview="handlePreview"
+      :on-remove="handleRemove"
+      :before-remove="beforeRemove"
+      multiple
+      :limit="3"
+      :on-success="handleSuccess"
+      :on-exceed="handleExceed"
+      :file-list="fileList">
+      <el-button size="small" type="primary">点击上传</el-button>
+      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+    </el-upload>
   </div>
 </template>
 
@@ -9,9 +22,23 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      fileList: [],
       msg: 'Welcome to Your Vue.js App',
     };
   },
+  methods: {
+    handlePreview () {},
+    handleRemove () {},
+    beforeRemove () {},
+    handleExceed () {},
+    handleSuccess (response, file, fileList) {
+      console.log(response);
+      console.log(file);
+      console.log(fileList);
+      this.fileList.push(file);
+      console.log(this.fileList);
+    },
+  }
 };
 </script>
 
