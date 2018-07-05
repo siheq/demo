@@ -1,6 +1,7 @@
 <template>
   <div class="slide-picture">
     <template>
+      <input v-test-directive/>
       <el-carousel indicator-position="outside" type="card">
         <el-carousel-item v-for="(item, index) in picList" :key="index">
           <img :src="item" style="width:300px;height:300px;"/>
@@ -12,10 +13,12 @@
 </template>
 
 <script>
-import mixinDemo from '@/CommonJS/mixinDemo';
+import mixinDemo from '@/CommonJS/mixin/mixinDemo';
+import testDirective from '@/CommonJS/directives/directiveDemo';
 export default {
   name: 'slidePicture',
   mixins: [mixinDemo],
+  directives: {testDirective},
   data () {
     return {
       picList: [
