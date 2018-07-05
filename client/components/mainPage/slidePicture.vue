@@ -1,7 +1,10 @@
 <template>
   <div class="slide-picture">
     <template>
-      <input v-test-directive/>
+      <button @click='changeI'>button</button>
+      <test-component v-test-directive='"test"'>
+        <div slot="slot1">{{testData}}</div>
+      </test-component>
       <el-carousel indicator-position="outside" type="card">
         <el-carousel-item v-for="(item, index) in picList" :key="index">
           <img :src="item" style="width:300px;height:300px;"/>
@@ -15,10 +18,12 @@
 <script>
 import mixinDemo from '@/CommonJS/mixin/mixinDemo';
 import testDirective from '@/CommonJS/directives/directiveDemo';
+import TestComponent from './TestComponent';
 export default {
   name: 'slidePicture',
   mixins: [mixinDemo],
   directives: {testDirective},
+  components: {TestComponent},
   data () {
     return {
       picList: [
@@ -66,7 +71,11 @@ export default {
               date: '2016-10-04'
           }
       ],
+      testData: '234',
     };
+  },
+  methods: {
+    changeI () {this.testData = new Date();},
   },
 };
 </script>
