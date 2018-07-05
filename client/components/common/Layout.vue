@@ -23,8 +23,12 @@ export default {
     headerView,
     sidebar,
   },
+  provide: {
+    test: this || 123456789,
+  },
   data () {
     return {
+      testData: 123456,
     };
   },
 };

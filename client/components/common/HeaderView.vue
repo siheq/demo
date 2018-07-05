@@ -16,7 +16,7 @@
       background-color='#545c64'
       text-color='#fff'
       active-text-color='#ffd04b'>
-      <div style='display:inline;float:left;margin-top:5px;margin-right:10px;'><img style='width:50px;' src='/static/resizeApi.png'></div>      
+      <div style='display:inline;float:left;margin-top:5px;margin-right:10px;'><img style='width:50px;' src='/static/resizeApi.png'></div>
       <el-menu-item index='1'>处理中心</el-menu-item>
       <el-submenu index='2'>
         <template slot='title'>我的工作台</template>
@@ -37,9 +37,21 @@ export default {
       activeIndex: '1',
     };
   },
+  inject: ['test'],
   methods: {
     handleSelect (key, keyPath) {
       console.log(key, keyPath);
+    },
+  },
+  mounted () {
+    console.log(this.test, 'mounted');
+  },
+  watch: {
+    test: {
+      immediate: true,
+      handler: function (val) {
+        console.log(val, 'watch');
+      }
     },
   },
 };
