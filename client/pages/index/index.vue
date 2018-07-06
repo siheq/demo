@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <layout></layout>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 import Layout from '../../components/common/Layout';
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Layout,
   },

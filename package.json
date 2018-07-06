@@ -11,7 +11,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue client test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue client test/unit/specs test/e2e/specs",
+    "lint-fix": "eslint --fix --ext .js,.vue client ./test/e2e/specs ./test/unit/specs"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -42,6 +43,7 @@
     "vue-strap": "^1.1.37"
   },
   "devDependencies": {
+    "ava": "^0.22.0",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -61,14 +63,16 @@
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.7",
     "eslint": "^3.19.0",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-html": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-ava": "^4.4.0",
+    "eslint-plugin-html": "^3.2.2",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^2.3.1",
+    "eslint-plugin-vue": "^3.13.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^3.0.0",
@@ -118,5 +122,16 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "ava": {
+    "files": [
+      "./test/unit/specs/**/*.js",
+      "!e2e/**"
+    ],
+    "powerAssert": false,
+    "babel": "inherit",
+    "require": [
+      "./avaSetup.js"
+    ]
+  }
 }

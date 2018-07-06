@@ -51,7 +51,7 @@ export default {
       immediate: true,
       handler: function (val) {
         console.log(val, 'watch');
-      }
+      },
     },
   },
 };

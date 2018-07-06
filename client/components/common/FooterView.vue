@@ -24,7 +24,7 @@ export default {
     background-color: rgb(165, 165, 165);
     transform: translateY(-100%);
     opacity: 0.5;
-    text-align: center;    
+    text-align: center;
   }
   .footer-font {
     color: black;

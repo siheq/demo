@@ -6,12 +6,12 @@
 
 <script>
 export default {
-  name: "TestComponent",
+  name: 'TestComponent',
   data () {
     return {
     };
   },
-}
+};
 </script>
 
 <style scoped>

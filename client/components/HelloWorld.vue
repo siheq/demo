@@ -1,18 +1,18 @@
 <template>
-  <div class="hello">
+  <div class='hello'>
     <el-upload
-      class="upload-demo"
-      action="https://jsonplaceholder.typicode.com/posts/"
-      :on-preview="handlePreview"
-      :on-remove="handleRemove"
-      :before-remove="beforeRemove"
+      class='upload-demo'
+      action='https://jsonplaceholder.typicode.com/posts/'
+      :on-preview='handlePreview'
+      :on-remove='handleRemove'
+      :before-remove='beforeRemove'
       multiple
-      :limit="3"
-      :on-success="handleSuccess"
-      :on-exceed="handleExceed"
-      :file-list="fileList">
-      <el-button size="small" type="primary">点击上传</el-button>
-      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+      :limit='3'
+      :on-success='handleSuccess'
+      :on-exceed='handleExceed'
+      :file-list='fileList'>
+      <el-button size='small' type='primary'>点击上传</el-button>
+      <div slot='tip' class='el-upload__tip'>只能上传jpg/png文件，且不超过500kb</div>
     </el-upload>
   </div>
 </template>
@@ -38,11 +38,11 @@ export default {
       this.fileList.push(file);
       console.log(this.fileList);
     },
-  }
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;

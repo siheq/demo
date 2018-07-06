@@ -1,10 +1,10 @@
 <template>
-  <div class="layout">
-    <el-row type="flex" style="height: 100%">
+  <div class='layout'>
+    <el-row type='flex' style='height: 100%'>
       <el-col :span='24'>
       <headerView></headerView>
         <!-- <sidebar></sidebar> -->
-        <div class="layout-content">
+        <div class='layout-content'>
           <router-view/>
         </div>
       <footerView></footerView>
