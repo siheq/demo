@@ -12,6 +12,12 @@
       <!--</el-carousel>-->
      <!--<Table :columns='columns1' :data='data1'></Table>-->
     <!--</template>-->
+    <custome-button @click='test'>testsetset</custome-button>
+    <custom-menu>
+      <custom-submenu>test</custom-submenu>
+      <custom-submenu>test2</custom-submenu>
+      <custom-submenu>test3</custom-submenu>
+    </custom-menu>
     <div style='height: 300px;margin-left: 500px'>
       <el-steps direction='vertical' :active='2'>
         <el-step title='步骤 1'>
@@ -32,11 +38,24 @@
 import mixinDemo from '@/CommonJS/mixin/mixinDemo';
 import testDirective from '@/CommonJS/directives/directiveDemo';
 import TestComponent from './TestComponent';
+import CustomMenu from './Menu';
+import CustomSubmenu from './Submenu';
 export default {
   name: 'SlidePicture',
   mixins: [mixinDemo],
   directives: {testDirective},
-  components: {TestComponent},
+  components: {
+    TestComponent,
+    CustomMenu,
+    CustomSubmenu,
+    CustomeButton: {
+      functional: true,
+      render: function (createElement, context) {
+        // 完全透明的传入任何特性、事件监听器、子结点等。
+        return createElement('button', context.data, context.children);
+      },
+    },
+  },
   data () {
     return {
       picList: [
@@ -90,6 +109,9 @@ export default {
   methods: {
     changeI () {
       this.testData = new Date();
+    },
+    test () {
+      console.log('click button');
     },
   },
 };
