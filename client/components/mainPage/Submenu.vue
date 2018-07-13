@@ -25,7 +25,7 @@ export default {
       },
     };
     return (
-      <li style='display: inline-block'>
+      <li style='display: inline-block;padding: 10px'>
           <div class={{
             'submenu': true,
           }} {...data}>

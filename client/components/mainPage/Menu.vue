@@ -33,7 +33,7 @@ export default {
     return (
       <div>
         <div>This is a Custom menu</div>
-        <ul>{this.$slots.default}</ul>
+        <ul class='base-ul'>{this.$slots.default}</ul>
       </div>
     );
     // return h(
@@ -45,5 +45,9 @@ export default {
 </script>
 
 <style scoped>
-
+.base-ul {
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*width: 50%;*/
+}
 </style>
