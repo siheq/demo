@@ -37,6 +37,7 @@ export default {
 <style>
 .layout-content {
   margin-bottom: 80px;
+  min-height: 85vh;
 }
 </style>
 

@@ -14,9 +14,15 @@
     <!--</template>-->
     <custome-button @click='test'>testsetset</custome-button>
     <custom-menu>
-      <custom-submenu>test</custom-submenu>
-      <custom-submenu>test2</custom-submenu>
-      <custom-submenu>test3</custom-submenu>
+      <custom-submenu>
+        <div slot='title'>test</div>
+      </custom-submenu>
+      <custom-submenu>
+        <div slot='title'>test2</div>
+      </custom-submenu>
+      <custom-submenu>
+        <div slot='title'>test3</div>
+      </custom-submenu>
     </custom-menu>
     <div style='height: 300px;margin-left: 500px'>
       <el-steps direction='vertical' :active='2'>
@@ -113,6 +119,12 @@ export default {
     test () {
       console.log('click button');
     },
+    submenuClick (value) {
+      console.log('parent value', value);
+    },
+  },
+  mounted () {
+    this.$on('submenuClick', this.submenuClick);
   },
 };
 </script>
