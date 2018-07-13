@@ -12,16 +12,24 @@
       <!--</el-carousel>-->
      <!--<Table :columns='columns1' :data='data1'></Table>-->
     <!--</template>-->
-    <custome-button @click='test'>testsetset</custome-button>
     <custom-menu>
       <custom-submenu>
         <div slot='title'>test</div>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
       </custom-submenu>
       <custom-submenu>
         <div slot='title'>test2</div>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
       </custom-submenu>
       <custom-submenu>
         <div slot='title'>test3</div>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
+        <custom-menu-item>item1</custom-menu-item>
       </custom-submenu>
     </custom-menu>
     <div style='height: 300px;margin-left: 500px'>
@@ -46,6 +54,7 @@ import testDirective from '@/CommonJS/directives/directiveDemo';
 import TestComponent from './TestComponent';
 import CustomMenu from './Menu';
 import CustomSubmenu from './Submenu';
+import CustomMenuItem from './MenuItem';
 export default {
   name: 'SlidePicture',
   mixins: [mixinDemo],
@@ -54,6 +63,7 @@ export default {
     TestComponent,
     CustomMenu,
     CustomSubmenu,
+    CustomMenuItem,
     CustomeButton: {
       functional: true,
       render: function (createElement, context) {
@@ -115,12 +125,6 @@ export default {
   methods: {
     changeI () {
       this.testData = new Date();
-    },
-    test () {
-      console.log('click button');
-    },
-    submenuClick (value) {
-      console.log('parent value', value);
     },
   },
   mounted () {

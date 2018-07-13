@@ -3,6 +3,11 @@ import emitter from '@/CommonJS/mixin/emitter';
 export default {
   name: 'Submenu',
   mixins: [emitter],
+  data () {
+    return {
+      open: true,
+    };
+  },
   render (h) {
     let self = this;
     const data = {
@@ -14,6 +19,7 @@ export default {
       // },
       on: {
         click: function (event) {
+          self.open = !self.open;
           self.emitParent('CustomMenu', 'submenuClick', self);
         },
       },
@@ -25,6 +31,11 @@ export default {
           }} {...data}>
             {this.$slots.title}
           </div>
+          <ul
+          class='ul-class'
+          v-show={this.open}>
+            {this.$slots.default}
+          </ul>
       </li>
     );
   },
@@ -34,5 +45,8 @@ export default {
 <style scoped>
 .submenu {
   display: inline-block;
+}
+.ul-class {
+ list-style: none;
 }
 </style>
