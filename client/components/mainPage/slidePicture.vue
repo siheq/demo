@@ -13,6 +13,7 @@
      <!--<Table :columns='columns1' :data='data1'></Table>-->
     <!--</template>-->
     <custom-menu>
+      <custom-menu-item>item1</custom-menu-item>
       <custom-submenu>
         <div slot='title'>test</div>
         <custom-menu-item>item1</custom-menu-item>

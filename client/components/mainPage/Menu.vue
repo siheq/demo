@@ -44,10 +44,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .base-ul {
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*width: 50%;*/
+  display: flex;
+  font-size: 22px;
 }
 </style>

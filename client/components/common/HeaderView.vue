@@ -58,19 +58,5 @@ export default {
 </script>
 
 <style>
-  .menu-item {
-    display: inline;
-    margin: 10px;
-  }
-
-  .menu-bar {
-    width: 100%;
-    height: 100px;
-    background-color: darkgray;
-  }
-
-  .icon {
-    background: url('../../assets/resizeApi.png');
-  }
 </style>
 
