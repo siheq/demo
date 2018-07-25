@@ -46,31 +46,6 @@ export default {
         },
       },
     };
-    const data2 = {
-      on: {
-        mouseenter: function (event) {
-          if (self.timeOut) {
-            window.clearTimeout(self.timeOut);
-            self.timeOut = null;
-          }
-          self.open = true;
-          // self.emitParent('CustomMenu', 'submenuClick', self);
-        },
-        mouseleave: function (event) {
-          self.timeOut = window.setTimeout(() => {
-            self.open = false;
-          }, 100);
-          // self.open = !self.open;
-          // self.emitParent('CustomMenu', 'submenuClick', self);
-        },
-        on: {
-          click: function (event) {
-            self.open = true;
-            self.emitParent('CustomMenu', 'submenuClick', self);
-          },
-        },
-      },
-    };
     // const submenuItemData = {
     //   on: {
     //     click: function (event) {
@@ -85,7 +60,7 @@ export default {
           }} {...data}>
             {this.$slots.title}
           </div>
-          <div refs='submenuItemList' class='submenu-item-list' {...data2}>
+          <div refs='submenuItemList' class='submenu-item-list' {...data}>
             <ul
             class='ul-class'
             v-show={this.open}>
