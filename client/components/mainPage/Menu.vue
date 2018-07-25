@@ -31,8 +31,7 @@ export default {
     //   },
     // };
     return (
-      <div>
-        <div>This is a Custom menu</div>
+      <div class='custome-menu-base'>
         <ul class='base-ul'>{this.$slots.default}</ul>
       </div>
     );
@@ -48,5 +47,15 @@ export default {
 .base-ul {
   display: flex;
   font-size: 22px;
+  color: white;
+  li {
+    line-height: 60px;
+    &:hover {
+      background: #303133;
+    }
+  }
+}
+.custome-menu-base {
+  background: rgb(84, 92, 100);
 }
 </style>

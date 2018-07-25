@@ -18,7 +18,7 @@ export default {
       },
     };
     return (
-      <li {...data} style='cursor: pointer' class={{'menu-item': self.checkParenName()}}>
+      <li {...data} class={{'menu-item': self.checkParenName()}}>
         {this.$slots.default}
       </li>
     );
@@ -26,9 +26,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .menu-item {
   display: inline-block;
-  padding: 10px;
+  padding: 0 10px;
+  cursor: pointer;
 }
 </style>

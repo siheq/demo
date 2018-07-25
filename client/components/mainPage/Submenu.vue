@@ -46,7 +46,7 @@ export default {
     //   },
     // };
     return (
-      <li style='display: inline-block;padding: 10px' {...data}>
+      <li style='display: inline-block;padding: 0 10px;position:relative' {...data}>
           <div class={{
             'submenu': true,
           }}>
@@ -72,9 +72,34 @@ export default {
 }
 .submenu-item-list {
   position: absolute;
-  width: 200px;
+  left: -5px;
+  background: #7f7f7f;
+  width: 180px;
   .ul-class {
     list-style: none;
+    li {
+      animation: rotaFrame 0.3s ease-in-out forwards;
+      cursor: pointer;
+      padding: 0 10px;
+      line-height: 40px;
+      &:hover {
+        background: #303133;;
+      }
+    }
   }
 }
+  @keyframes rotaFrame {
+    0% {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 </style>
