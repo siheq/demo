@@ -6,6 +6,7 @@ export default {
   data () {
     return {
       open: false,
+      timeOut: null,
     };
   },
   mounted () {
@@ -23,11 +24,18 @@ export default {
       // },
       on: {
         mouseenter: function (event) {
+          if (self.timeOut) {
+            window.clearTimeout(self.timeOut);
+            self.timeOut = null;
+          }
           self.open = !self.open;
           // self.emitParent('CustomMenu', 'submenuClick', self);
         },
         mouseleave: function (event) {
-          self.open = !self.open;
+          self.timeOut = window.setTimeout(() => {
+            self.open = !self.open;
+          }, 100);
+          // self.open = !self.open;
           // self.emitParent('CustomMenu', 'submenuClick', self);
         },
         on: {
