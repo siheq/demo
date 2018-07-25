@@ -28,12 +28,37 @@ export default {
             window.clearTimeout(self.timeOut);
             self.timeOut = null;
           }
-          self.open = !self.open;
+          self.open = true;
           // self.emitParent('CustomMenu', 'submenuClick', self);
         },
         mouseleave: function (event) {
           self.timeOut = window.setTimeout(() => {
-            self.open = !self.open;
+            self.open = false;
+          }, 100);
+          // self.open = !self.open;
+          // self.emitParent('CustomMenu', 'submenuClick', self);
+        },
+        on: {
+          click: function (event) {
+            self.open = true;
+            self.emitParent('CustomMenu', 'submenuClick', self);
+          },
+        },
+      },
+    };
+    const data2 = {
+      on: {
+        mouseenter: function (event) {
+          if (self.timeOut) {
+            window.clearTimeout(self.timeOut);
+            self.timeOut = null;
+          }
+          self.open = true;
+          // self.emitParent('CustomMenu', 'submenuClick', self);
+        },
+        mouseleave: function (event) {
+          self.timeOut = window.setTimeout(() => {
+            self.open = false;
           }, 100);
           // self.open = !self.open;
           // self.emitParent('CustomMenu', 'submenuClick', self);
@@ -54,13 +79,13 @@ export default {
     //   },
     // };
     return (
-      <li style='display: inline-block;padding: 0 10px;position:relative' {...data}>
+      <li style='display: inline-block;padding: 0 10px;position:relative'>
           <div class={{
             'submenu': true,
-          }}>
+          }} {...data}>
             {this.$slots.title}
           </div>
-          <div refs='submenuItemList' class='submenu-item-list'>
+          <div refs='submenuItemList' class='submenu-item-list' {...data2}>
             <ul
             class='ul-class'
             v-show={this.open}>
@@ -82,6 +107,7 @@ export default {
   position: absolute;
   left: -5px;
   background: #7f7f7f;
+  margin-top: 5px;
   width: 180px;
   .ul-class {
     list-style: none;
