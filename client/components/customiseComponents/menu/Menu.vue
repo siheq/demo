@@ -50,6 +50,7 @@ export default {
   color: white;
   li {
     line-height: 60px;
+    padding: 0 20px;
     &:hover {
       background: #303133;
     }
