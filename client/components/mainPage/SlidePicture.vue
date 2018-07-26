@@ -12,19 +12,19 @@
       <!--</el-carousel>-->
      <!--<Table :columns='columns1' :data='data1'></Table>-->
     <!--</template>-->
-    <div style='height: 300px;margin-left: 500px'>
-      <el-steps direction='vertical' :active='2'>
-        <el-step title='步骤 1'>
-          <div slot='icon' class='time-line-circle'></div>
-        </el-step>
-        <el-step title='步骤 2'>
-          <div slot='icon' class='time-line-circle'></div>
-        </el-step>
-        <el-step title='步骤 3' description='这是一段很长很长很长的描述性文字'>
-          <div slot='icon' class='time-line-point'></div>
-        </el-step>
-      </el-steps>
-    </div>
+    <!--<div style='height: 300px;margin-left: 500px'>-->
+      <!--<el-steps direction='vertical' :active='2'>-->
+        <!--<el-step title='步骤 1'>-->
+          <!--<div slot='icon' class='time-line-circle'></div>-->
+        <!--</el-step>-->
+        <!--<el-step title='步骤 2'>-->
+          <!--<div slot='icon' class='time-line-circle'></div>-->
+        <!--</el-step>-->
+        <!--<el-step title='步骤 3' description='这是一段很长很长很长的描述性文字'>-->
+          <!--<div slot='icon' class='time-line-point'></div>-->
+        <!--</el-step>-->
+      <!--</el-steps>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -109,32 +109,30 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-  .el-carousel__item {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-    text-align: center;
-  }
-
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
-  .time-line-circle {
-    border-radius: 50%;
-    background-color: #0074D9;
-    width: 20px;
-    height: 20px;
-  }
-  .time-line-point {
-    border-radius: 50%;
-    background-color: #0074D9;
-    width: 10px;
-    height: 10px;
-  }
+  /*.el-carousel__item {*/
+    /*color: #475669;*/
+    /*font-size: 18px;*/
+    /*opacity: 0.75;*/
+    /*line-height: 300px;*/
+    /*margin: 0;*/
+    /*text-align: center;*/
+  /*}*/
+  /*.el-carousel__item:nth-child(2n) {*/
+    /*background-color: #99a9bf;*/
+  /*}*/
+  /*.el-carousel__item:nth-child(2n+1) {*/
+    /*background-color: #d3dce6;*/
+  /*}*/
+  /*.time-line-circle {*/
+    /*border-radius: 50%;*/
+    /*background-color: #0074D9;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+  /*}*/
+  /*.time-line-point {*/
+    /*border-radius: 50%;*/
+    /*background-color: #0074D9;*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+  /*}*/
 </style>

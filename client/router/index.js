@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import slidePicture from '@/components/mainPage/slidePicture.vue';
+import slidePicture from '@/components/mainPage/SlidePicture.vue';
 import homePage from '@/components/HelloWorld.vue';
 
 Vue.use(Router);

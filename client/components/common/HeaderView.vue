@@ -47,7 +47,7 @@
         <custom-menu-item :index='2'>item1</custom-menu-item>
         <custom-menu-item :index='3'>item1</custom-menu-item>
       </custom-submenu>
-      <div style='line-height: 60px;float: right;'>
+      <div style='line-height: 60px;float: right;padding: 0 10px'>
         <a>登录</a>
       </div>
     </custom-menu>
