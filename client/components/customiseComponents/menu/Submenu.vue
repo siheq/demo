@@ -81,13 +81,13 @@ export default {
 .submenu-item-list {
   position: absolute;
   left: -5px;
-  background: #7f7f7f;
   margin-top: 5px;
   width: 180px;
   .ul-class {
     list-style: none;
     li {
       animation: rotaFrame 0.3s ease-in-out forwards;
+      background: #7f7f7f;
       cursor: pointer;
       padding: 0 10px;
       line-height: 40px;
@@ -98,17 +98,30 @@ export default {
   }
 }
   @keyframes rotaFrame {
+    from {
+      opacity: 0;
+      transform: translateX(30px) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotateY(0);
+    }
+  }
+  @keyframes tmp {
     0% {
       opacity: 0;
       transform: scale(0.7);
+      transform:rotate(-90deg);
     }
     50% {
       opacity: 0.5;
       transform: scale(1.1);
+      transform:rotate(-45deg);
     }
     100% {
       opacity: 1;
       transform: scale(1);
+      transform:rotate(0deg);
     }
   }
 </style>
