@@ -86,11 +86,12 @@ export default {
   .ul-class {
     list-style: none;
     li {
-      animation: rotaFrame 0.3s ease-in-out forwards;
+      animation: tmp 0.3s ease-in-out forwards;
       background: #7f7f7f;
       cursor: pointer;
       padding: 0 10px;
       line-height: 40px;
+      opacity: 0;
       &:hover {
         background: #303133;;
       }
@@ -111,17 +112,14 @@ export default {
     0% {
       opacity: 0;
       transform: scale(0.7);
-      transform:rotate(-90deg);
     }
     50% {
       opacity: 0.5;
       transform: scale(1.1);
-      transform:rotate(-45deg);
     }
     100% {
       opacity: 1;
       transform: scale(1);
-      transform:rotate(0deg);
     }
   }
 </style>
