@@ -38,11 +38,9 @@ export default {
           // self.open = !self.open;
           // self.emitParent('CustomMenu', 'submenuClick', self);
         },
-        on: {
-          click: function (event) {
-            self.open = true;
-            self.emitParent('CustomMenu', 'submenuClick', self);
-          },
+        click: function (event) {
+          self.open = true;
+          self.emitParent('CustomMenu', 'submenuClick', self);
         },
       },
     };
