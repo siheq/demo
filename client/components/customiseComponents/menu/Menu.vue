@@ -45,7 +45,7 @@ export default {
 
 <style lang='scss' scoped>
 .base-ul {
-  display: flex;
+  /*display: flex;*/
   font-size: 22px;
   color: white;
   li {
