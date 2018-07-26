@@ -23,9 +23,8 @@ export default {
 <style lang='scss' scoped>
 .bubble-main {
   border-radius: 5px;
-  /*width: 400px;*/
   padding: 10px;
-  border: 1px solid #3e6780;
   display: inline-block;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 </style>
