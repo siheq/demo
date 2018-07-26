@@ -12,27 +12,6 @@
       <!--</el-carousel>-->
      <!--<Table :columns='columns1' :data='data1'></Table>-->
     <!--</template>-->
-    <custom-menu>
-      <custom-menu-item>item1</custom-menu-item>
-      <custom-submenu>
-        <div slot='title'>test</div>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-      </custom-submenu>
-      <custom-submenu>
-        <div slot='title'>test2</div>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-      </custom-submenu>
-      <custom-submenu>
-        <div slot='title'>test3</div>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-        <custom-menu-item>item1</custom-menu-item>
-      </custom-submenu>
-    </custom-menu>
     <div style='height: 300px;margin-left: 500px'>
       <el-steps direction='vertical' :active='2'>
         <el-step title='步骤 1'>
@@ -53,18 +32,12 @@
 import mixinDemo from '@/CommonJS/mixin/mixinDemo';
 import testDirective from '@/CommonJS/directives/directiveDemo';
 import TestComponent from './TestComponent';
-import CustomMenu from './Menu';
-import CustomSubmenu from './Submenu';
-import CustomMenuItem from './MenuItem';
 export default {
   name: 'SlidePicture',
   mixins: [mixinDemo],
   directives: {testDirective},
   components: {
     TestComponent,
-    CustomMenu,
-    CustomSubmenu,
-    CustomMenuItem,
     CustomeButton: {
       functional: true,
       render: function (createElement, context) {

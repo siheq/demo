@@ -3,6 +3,7 @@ import emitter from '@/CommonJS/mixin/emitter';
 export default {
   name: 'MenuItem',
   mixins: [emitter],
+  props: ['index'],
   methods: {
     checkParenName () {
       return this.$parent.$options.componentName === 'CustomMenu';
@@ -18,7 +19,7 @@ export default {
       },
     };
     return (
-      <li {...data} class={{'menu-item': self.checkParenName()}}>
+      <li {...data} style={!self.checkParenName() ? `animation-delay:0.${2 * self.index}s` : ''} class={{'menu-item': self.checkParenName()}}>
         {this.$slots.default}
       </li>
     );
