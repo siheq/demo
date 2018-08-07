@@ -23,7 +23,7 @@ module.exports = (app, express)=>{
   serverRoutes.forEach( (routePath) => {
     require(path.resolve(routePath))(app);
   })
-  
+
   var staticPath1 = path.posix.join('/dist/', 'static')
   app.use(staticPath1, express.static('.'+'/dist/'+'/static'))
 
@@ -39,11 +39,11 @@ module.exports = (app, express)=>{
   app.use(flash());
 
 
-  mongoose.connect('mongodb://localhost:27017');
-  
+  mongoose.connect('mongodb://localhost:27017/demo', {useNewUrlParser:true});
+
   var db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function (callback) {
     console.log('MongoDB Connected Success')
   });
-} 
+}
