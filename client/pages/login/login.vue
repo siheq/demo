@@ -2,9 +2,9 @@
     <div id='app'>
       <!--<div class='login-page'></div>-->
       <div class='login-page'>
-        <el-card class='login-form'>
-          <el-input type='text' placeholder='Account' class='login-input'></el-input>
-          <el-input type='password' placeholder='Password' class='login-input'></el-input>
+        <el-card @keyup.native.enter='login' class='login-form'>
+          <el-input type='text' v-model='loginForm.username' placeholder='Account' class='login-input'></el-input>
+          <el-input type='password' v-model='loginForm.password' placeholder='Password' class='login-input'></el-input>
         </el-card>
       </div>
     </div>
@@ -12,6 +12,8 @@
 
 <script>
 import Layout from '../../components/common/Layout';
+import {login} from '../../service/loginPage';
+
 export default {
   name: 'App',
   components: {
@@ -19,9 +21,16 @@ export default {
   },
   data () {
     return {
+      loginForm: {
+        username: '',
+        password: '',
+      },
     };
   },
   methods: {
+    async login () {
+      await login(Object.assign({}, this.loginForm));
+    },
   },
 };
 </script>
@@ -41,9 +50,9 @@ export default {
     position: absolute;
     left: 20%;
     top: 20%;
-    width: 300px;
+    width: 350px;
     .login-input {
-      width: 250px;
+      width: 300px;
       margin: 10px;
     }
   }
