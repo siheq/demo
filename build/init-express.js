@@ -20,18 +20,6 @@ module.exports = (app, express)=>{
 
   var serverRoutes = utils.getGlobbedPaths('server/!(core)/router/**/*.js')
   // require("../server/first/router/firstRoute.js")(app);
-  app.all('*',function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
-    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-
-    if (req.method == 'OPTIONS') {
-      res.send(200);
-    }
-    else {
-      next();
-    }
-  });
   serverRoutes.forEach( (routePath) => {
     require(path.resolve(routePath))(app);
   })

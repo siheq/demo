@@ -29,7 +29,15 @@ export default {
   },
   methods: {
     async login () {
-      await login(Object.assign({}, this.loginForm));
+      try {
+        let result = await login(Object.assign({}, this.loginForm));
+        if (result.code === 'SUCCESS') {
+          this.$message.success('Login Success!!!');
+        }
+      }
+      catch (e) {
+        this.$message.error(e);
+      }
     },
   },
 };

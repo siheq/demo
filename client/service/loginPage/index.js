@@ -1,6 +1,6 @@
 import * as loginRepository from '../../repository/loginPage';
 
 export const login = async loginForm => {
-  console.log('service');
-  await loginRepository.loginRequest(loginForm);
+  let result = await loginRepository.loginRequest(loginForm);
+  return result;
 };

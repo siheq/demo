@@ -6,6 +6,7 @@ module.exports = function (app) {
   app.route('/login').get(con.login);
 
   app.route('/api/login').post((req, res, next) => {
-    console.log(req.query);
+    console.log(req.query, req.body);
+    res.json({code: 'SUCCESS'});
   });
 };
