@@ -5,5 +5,4 @@ module.exports = function (app) {
   var conn = require('../controller/controller.js');
   // Define application route
   app.route('/').get(conn.con);
-
 };
