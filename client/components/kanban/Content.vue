@@ -1,8 +1,10 @@
 <template>
   <div>
-    <bubble-card>
-      test
-    </bubble-card>
+    <div v-for='item in cardData'>
+      <bubble-card>
+        {{item}}
+      </bubble-card>
+    </div>
   </div>
 </template>
 
@@ -13,6 +15,9 @@ export default {
   components: {
     BubbleCard,
   },
+  data: () => ({
+    cardData: [1, 2],
+  }),
 };
 </script>
 
