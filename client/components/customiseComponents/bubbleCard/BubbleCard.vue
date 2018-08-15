@@ -1,6 +1,6 @@
 <template>
-  <div class='bubble-main' :style='"width:"+width'>
-    <div style='border-bottom: 1px solid #0074D9'>
+  <div class='bubble-main'>
+    <div style='border-bottom: 1px solid #0074D9;width: 100%'>
       <slot name='title'>
       </slot>
     </div>
@@ -24,7 +24,7 @@ export default {
 .bubble-main {
   border-radius: 5px;
   padding: 10px;
-  display: inline-block;
+  /*display: inline-block;*/
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 </style>
