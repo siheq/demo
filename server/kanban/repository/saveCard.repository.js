@@ -1,7 +1,8 @@
-const cardModal = require('../modal/card.modal');
+const CardModal = require('../modal/card.modal');
 
 const saveCard = params => {
-  cardModal.save(params, err => {
+  let modal = new CardModal(params);
+  modal.save(params, err => {
     if (err) {
       console.log('error', err);
     }
