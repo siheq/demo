@@ -15,7 +15,7 @@
                     placeholder='请输入内容'
                     v-model='cardData[index].content'>
                   </el-input>
-                  <el-button type='primary' size='mini' @click='saveCard'>Finish</el-button>
+                  <el-button class='mission-button' type='primary' size='mini' @click='saveCard(index)'>Finish</el-button>
                 </div>
                 <div v-else>
                   {{item.content}}
@@ -34,6 +34,8 @@
 
 <script>
 import BubbleCard from '../customiseComponents/bubbleCard/BubbleCard';
+import {saveCard} from '@/service/kanban/saveCard.ui.service';
+
 export default {
   name: 'Content',
   components: {
@@ -63,10 +65,17 @@ export default {
       //   this.activeIndex = index;
       // }
     },
-    saveCard () {
+    async saveCard (index) {
       // To Do call api to save data
       console.log('save card');
-      this.activeIndex = -1;
+      let params = {
+        type: 'mission',
+        content: this.cardData[index].content,
+      };
+      let result = await saveCard(params);
+      if (result.code === 'SUCCESS') {
+        this.activeIndex = -1;
+      }
     },
   },
 };
@@ -85,6 +94,9 @@ export default {
   }
   .mission-item {
     margin: 10px 0;
+    .mission-button {
+      margin-top: 10px;
+    }
   }
 }
 </style>
