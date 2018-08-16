@@ -15,7 +15,8 @@
                     placeholder='请输入内容'
                     v-model='cardData[index].content'>
                   </el-input>
-                  <el-button class='mission-button' type='primary' size='mini' @click='saveCard(index)'>Finish</el-button>
+                  <el-button v-if='isUpdate' class='mission-button' type='primary' size='mini' @click='updateCard(index)'>Update</el-button>
+                  <el-button v-else class='mission-button' type='primary' size='mini' @click='saveCard(index)'>Finish</el-button>
                 </div>
                 <div v-else>
                   {{item.content}}
@@ -45,6 +46,7 @@ export default {
     return {
       cardData: [],
       activeIndex: -1,
+      isUpdate: false,
     };
   },
   methods: {
@@ -56,6 +58,9 @@ export default {
     clickCard (index) {
       if (this.activeIndex !== index) {
         // console.log('click card');
+        if (this.cardData[index].content) {
+          this.isUpdate = true;
+        }
         this.activeIndex = index;
       }
       // if (this.activeIndex === index) {
@@ -76,6 +81,9 @@ export default {
       if (result.code === 'SUCCESS') {
         this.activeIndex = -1;
       }
+    },
+    updateCard (index) {
+      console.log('update', index);
     },
   },
 };
