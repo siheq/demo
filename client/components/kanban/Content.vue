@@ -17,6 +17,7 @@
                   </el-input>
                   <el-button v-if='isUpdate' class='mission-button' type='primary' size='mini' @click='updateCard(index)'>Update</el-button>
                   <el-button v-else class='mission-button' type='primary' size='mini' @click='saveCard(index)'>Finish</el-button>
+                  <el-button class='mission-button' type='danger' size='mini' @click='cancelCard(index)'>Cancel</el-button>
                 </div>
                 <div v-else>
                   {{item.content}}
@@ -84,6 +85,10 @@ export default {
     },
     updateCard (index) {
       console.log('update', index);
+      this.activeIndex = -1;
+    },
+    cancelCard (index) {
+      this.activeIndex = -1;
     },
   },
 };
