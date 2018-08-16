@@ -1,4 +1,4 @@
-const saveCardSerice = require('../service/saveCard.service');
+const saveCardSerice = require('../service/cardData.service');
 
 const render = (req, res) => {
   res.render('views/kanban');
@@ -12,7 +12,23 @@ const saveCard = async (req, res) => {
     type,
     userId: '5b74e8e0676c2248d0d12416',
   };
-  await saveCardSerice.saveCard(param);
+  let result = await saveCardSerice.saveCard(param);
+  res.json({
+    code: 'SUCCESS',
+    data: result,
+  });
+};
+
+const updateCard = async (req, res) => {
+  console.log(req.query, req.body, 'body');
+  const {content, type, _id} = req.body;
+  let param = {
+    content,
+    type,
+    userId: '5b74e8e0676c2248d0d12416',
+    _id,
+  };
+  await saveCardSerice.updateCard(param);
   res.json({
     code: 'SUCCESS',
   });
@@ -21,6 +37,7 @@ const saveCard = async (req, res) => {
 module.exports = {
   render,
   saveCard,
+  updateCard,
 };
 
 // const updateAlarm = async (req, res) => {

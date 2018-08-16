@@ -8,3 +8,11 @@ export const saveCard = async params => {
   console.log('call success');
   return body.data;
 };
+
+export const updateCard = async params => {
+  // let url = `${getBaseUrl()}/save`;
+  let url = 'http://localhost:8000/api/update';
+  const body = await post(url, params);
+  console.log('call success');
+  return body.data;
+};
