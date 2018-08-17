@@ -36,7 +36,7 @@
 
 <script>
 import BubbleCard from '../customiseComponents/bubbleCard/BubbleCard';
-import {saveCard} from '@/service/kanban/cardData.ui.service';
+import {saveCard, updateCard} from '@/service/kanban/cardData.ui.service';
 
 export default {
   name: 'Content',
@@ -88,9 +88,13 @@ export default {
         this.activeIndex = -1;
       }
     },
-    updateCard (index) {
+    async updateCard (index) {
       console.log('update', index);
-      this.activeIndex = -1;
+      let params = Object.assign({}, this.cardData[index]);
+      let result = await updateCard(params);
+      if (result.code === 'SUCCESS') {
+        this.activeIndex = -1;
+      }
     },
     cancelCard (index) {
       this.activeIndex = -1;

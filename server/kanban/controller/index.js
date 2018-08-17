@@ -5,7 +5,6 @@ const render = (req, res) => {
 };
 
 const saveCard = async (req, res) => {
-  console.log(req.query, req.body, 'body');
   const {content, type} = req.body;
   let param = {
     content,
@@ -20,7 +19,6 @@ const saveCard = async (req, res) => {
 };
 
 const updateCard = async (req, res) => {
-  console.log(req.query, req.body, 'body');
   const {content, type, _id} = req.body;
   let param = {
     content,
@@ -28,9 +26,10 @@ const updateCard = async (req, res) => {
     userId: '5b74e8e0676c2248d0d12416',
     _id,
   };
-  await saveCardSerice.updateCard(param);
+  let result = await saveCardSerice.updateCard(param);
   res.json({
     code: 'SUCCESS',
+    data: result,
   });
 };
 

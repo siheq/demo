@@ -5,8 +5,9 @@ const saveCard = async params => {
   return result;
 };
 
-const updateCard = params => {
-  saveCardRepository.updateCard(params);
+const updateCard = async params => {
+  let result = await saveCardRepository.updateCard(params);
+  return result;
 };
 
 module.exports = {
