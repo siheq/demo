@@ -25,7 +25,7 @@ const updateCard = params => {
             console.log('save history value err:', err);
           }
           else {
-            historyValue.set({operation: 'UPDATE'});
+            historyValue.set({operation: 'UPDATE', content: params.content, type: params.type});
             // historyValue = Object.assign({}, historyValue);
             delete historyValue._doc._id;
             let newModal = new CardModal(historyValue._doc);
