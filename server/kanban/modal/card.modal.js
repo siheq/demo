@@ -8,6 +8,21 @@ const schema = new Schema({
   },
   content: String,
   type: String,
+  updated: {
+    type: Date,
+  },
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  tag: {
+    type: String,
+    default: '还没有加',
+  },
+  operation: {
+    type: String,
+    default: 'ADD',
+  },
 });
 
 const modal = mongoose.model('card', schema, 'card');

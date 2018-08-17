@@ -53,9 +53,16 @@ export default {
   },
   methods: {
     addMission () {
-      this.cardData.push({
-        content: '',
-      });
+      if (this.cardData.length === 0) {
+        this.cardData.push({
+          content: '',
+        });
+      }
+      else if (this.cardData[this.cardData.length - 1].content) {
+        this.cardData.push({
+          content: '',
+        });
+      }
     },
     clickCard (index) {
       if (this.activeIndex !== index) {
@@ -64,6 +71,9 @@ export default {
           this.originalData = Object.assign({}, this.cardData[index]);
           console.log(this.originalData);
           this.isUpdate = true;
+        }
+        else {
+          this.isUpdate = false;
         }
         this.activeIndex = index;
       }
@@ -94,6 +104,7 @@ export default {
       let result = await updateCard(params);
       if (result.code === 'SUCCESS') {
         this.activeIndex = -1;
+        this.cardData.splice(index, 1, result.data);
       }
     },
     cancelCard (index) {
